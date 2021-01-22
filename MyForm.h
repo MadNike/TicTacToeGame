@@ -69,8 +69,12 @@ namespace TicTacToeGamev2 {
 	private: System::Windows::Forms::Button^ StartGameButton;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ CurrentPlayerLabel;
-	private: System::Windows::Forms::Label^ ErrorMsgLabel;
-	private: System::Windows::Forms::Label^ PlayerWonLabel;
+
+
+	private: System::Windows::Forms::TextBox^ ErrorMsgTextBox;
+	private: System::Windows::Forms::TextBox^ PlayerWonLabel;
+
+
 
 
 
@@ -102,7 +106,6 @@ namespace TicTacToeGamev2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->Text = "TicTacToeGame";
 			this->Field4 = (gcnew System::Windows::Forms::PictureBox());
 			this->Field3 = (gcnew System::Windows::Forms::PictureBox());
 			this->Field5 = (gcnew System::Windows::Forms::PictureBox());
@@ -121,8 +124,8 @@ namespace TicTacToeGamev2 {
 			this->StartGameButton = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->CurrentPlayerLabel = (gcnew System::Windows::Forms::Label());
-			this->ErrorMsgLabel = (gcnew System::Windows::Forms::Label());
-			this->PlayerWonLabel = (gcnew System::Windows::Forms::Label());
+			this->ErrorMsgTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->PlayerWonLabel = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Field4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Field3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Field5))->BeginInit();
@@ -140,6 +143,7 @@ namespace TicTacToeGamev2 {
 			// 
 			// Field4
 			// 
+			this->Field4->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Field4->Location = System::Drawing::Point(212, 161);
 			this->Field4->Name = L"Field4";
 			this->Field4->Size = System::Drawing::Size(93, 85);
@@ -149,6 +153,7 @@ namespace TicTacToeGamev2 {
 			// 
 			// Field3
 			// 
+			this->Field3->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Field3->Location = System::Drawing::Point(419, 58);
 			this->Field3->Name = L"Field3";
 			this->Field3->Size = System::Drawing::Size(93, 85);
@@ -158,6 +163,7 @@ namespace TicTacToeGamev2 {
 			// 
 			// Field5
 			// 
+			this->Field5->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Field5->Location = System::Drawing::Point(320, 161);
 			this->Field5->Name = L"Field5";
 			this->Field5->Size = System::Drawing::Size(93, 85);
@@ -167,6 +173,7 @@ namespace TicTacToeGamev2 {
 			// 
 			// Field2
 			// 
+			this->Field2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Field2->Location = System::Drawing::Point(320, 59);
 			this->Field2->Name = L"Field2";
 			this->Field2->Size = System::Drawing::Size(93, 85);
@@ -177,6 +184,7 @@ namespace TicTacToeGamev2 {
 			// 
 			// Field6
 			// 
+			this->Field6->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Field6->Location = System::Drawing::Point(419, 161);
 			this->Field6->Name = L"Field6";
 			this->Field6->Size = System::Drawing::Size(93, 85);
@@ -186,6 +194,7 @@ namespace TicTacToeGamev2 {
 			// 
 			// Field1
 			// 
+			this->Field1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Field1->Location = System::Drawing::Point(212, 58);
 			this->Field1->Name = L"Field1";
 			this->Field1->Size = System::Drawing::Size(93, 85);
@@ -195,6 +204,7 @@ namespace TicTacToeGamev2 {
 			// 
 			// Field7
 			// 
+			this->Field7->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Field7->Location = System::Drawing::Point(212, 271);
 			this->Field7->Name = L"Field7";
 			this->Field7->Size = System::Drawing::Size(93, 85);
@@ -204,6 +214,7 @@ namespace TicTacToeGamev2 {
 			// 
 			// Field8
 			// 
+			this->Field8->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Field8->Location = System::Drawing::Point(319, 271);
 			this->Field8->Name = L"Field8";
 			this->Field8->Size = System::Drawing::Size(93, 85);
@@ -213,6 +224,7 @@ namespace TicTacToeGamev2 {
 			// 
 			// Field9
 			// 
+			this->Field9->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Field9->Location = System::Drawing::Point(419, 271);
 			this->Field9->Name = L"Field9";
 			this->Field9->Size = System::Drawing::Size(93, 85);
@@ -303,27 +315,39 @@ namespace TicTacToeGamev2 {
 			this->CurrentPlayerLabel->Text = L"Player 1";
 			this->CurrentPlayerLabel->Visible = false;
 			// 
-			// ErrorMsgLabel
+			// ErrorMsgTextBox
 			// 
-			this->ErrorMsgLabel->AutoSize = true;
-			this->ErrorMsgLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ErrorMsgTextBox->BackColor = System::Drawing::Color::Black;
+			this->ErrorMsgTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->ErrorMsgTextBox->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->ErrorMsgTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->ErrorMsgLabel->ForeColor = System::Drawing::Color::DarkRed;
-			this->ErrorMsgLabel->Location = System::Drawing::Point(257, 498);
-			this->ErrorMsgLabel->Name = L"ErrorMsgLabel";
-			this->ErrorMsgLabel->Size = System::Drawing::Size(0, 18);
-			this->ErrorMsgLabel->TabIndex = 18;
+			this->ErrorMsgTextBox->ForeColor = System::Drawing::Color::Lime;
+			this->ErrorMsgTextBox->Location = System::Drawing::Point(212, 490);
+			this->ErrorMsgTextBox->Name = L"ErrorMsgTextBox";
+			this->ErrorMsgTextBox->ReadOnly = true;
+			this->ErrorMsgTextBox->Size = System::Drawing::Size(300, 23);
+			this->ErrorMsgTextBox->TabIndex = 20;
+			this->ErrorMsgTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->ErrorMsgTextBox->Visible = false;
+			this->ErrorMsgTextBox->Enter += gcnew System::EventHandler(this, &MyForm::ErrorMsgTextBox_Enter);
 			// 
 			// PlayerWonLabel
 			// 
-			this->PlayerWonLabel->AutoSize = true;
+			this->PlayerWonLabel->BackColor = System::Drawing::Color::White;
+			this->PlayerWonLabel->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->PlayerWonLabel->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->PlayerWonLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->PlayerWonLabel->ForeColor = System::Drawing::Color::Green;
-			this->PlayerWonLabel->Location = System::Drawing::Point(236, 9);
+			this->PlayerWonLabel->ForeColor = System::Drawing::Color::ForestGreen;
+			this->PlayerWonLabel->Location = System::Drawing::Point(241, 12);
 			this->PlayerWonLabel->Name = L"PlayerWonLabel";
-			this->PlayerWonLabel->Size = System::Drawing::Size(0, 25);
-			this->PlayerWonLabel->TabIndex = 19;
+			this->PlayerWonLabel->ReadOnly = true;
+			this->PlayerWonLabel->Size = System::Drawing::Size(242, 23);
+			this->PlayerWonLabel->TabIndex = 21;
+			this->PlayerWonLabel->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->PlayerWonLabel->Visible = false;
+			this->PlayerWonLabel->Enter += gcnew System::EventHandler(this, &MyForm::ErrorMsgTextBox_Enter);
 			// 
 			// MyForm
 			// 
@@ -331,7 +355,7 @@ namespace TicTacToeGamev2 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(732, 574);
 			this->Controls->Add(this->PlayerWonLabel);
-			this->Controls->Add(this->ErrorMsgLabel);
+			this->Controls->Add(this->ErrorMsgTextBox);
 			this->Controls->Add(this->CurrentPlayerLabel);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->StartGameButton);
@@ -381,15 +405,18 @@ namespace TicTacToeGamev2 {
 		PictureBox^ box = static_cast<PictureBox^>(sender);
 		if (!gameStarted)
 		{
-			this->ErrorMsgLabel->Text = "Start the game first";
+			this->ErrorMsgTextBox->Visible = true;
+			this->ErrorMsgTextBox->Text = "Start the game first";
 		}
 		else if(cells[box->TabIndex] != 0)
 		{
-			this->ErrorMsgLabel->Text = "This cell is already occupied";
+			this->ErrorMsgTextBox->Visible = true;
+			this->ErrorMsgTextBox->Text = "This cell is already occupied";
 		}
 		else
 		{
-			this->ErrorMsgLabel->Text = "";
+			this->ErrorMsgTextBox->Visible = false;
+			this->ErrorMsgTextBox->Text = "";
 			if (CurrentPlayerLabel->Text == "Player 1") {
 				DrawCross(box);
 				cells[box->TabIndex] = 1;
@@ -406,11 +433,13 @@ namespace TicTacToeGamev2 {
 			if (checkWinCondition(cells))
 			{
 				gameStarted = false;
+				PlayerWonLabel->Visible = true;
 				PlayerWonLabel->Text = CurrentPlayerLabel->Text + " won!";
 			}
 			else if (isDraw(cells))
 			{
 				gameStarted = false;
+				PlayerWonLabel->Visible = true;
 				PlayerWonLabel->Text = "Game ended in a draw";
 			}
 		}
@@ -421,15 +450,15 @@ namespace TicTacToeGamev2 {
 	{
 		Graphics^ g = box->CreateGraphics();
 		Pen^ pp = gcnew Pen(Brushes::Black, 4);
-		g->DrawLine(pp, 5, 7, 50, 60);
-		g->DrawLine(pp, 5, 60, 50, 7);
+		g->DrawLine(pp, 9, 9, 50, 60);
+		g->DrawLine(pp, 9, 60, 50, 9);
 	}
 
 	private: System::Void DrawCircle(PictureBox^ box)
 	{
 		Graphics^ g = box->CreateGraphics();
 		Pen^ pp = gcnew Pen(Brushes::Black, 4);
-		g->DrawEllipse(pp, 5, 7, 50, 50);
+		g->DrawEllipse(pp, 6, 9, 50, 50);
 	}
 	private: System::Void StartGameButton_Click(System::Object^ sender, System::EventArgs^ e)
 	{
@@ -443,8 +472,10 @@ namespace TicTacToeGamev2 {
 		Field7->Invalidate();
 		Field8->Invalidate();
 		Field9->Invalidate();
+		PlayerWonLabel->Visible = false;
 		PlayerWonLabel->Text = "";
-		ErrorMsgLabel->Text = "";
+		ErrorMsgTextBox->Visible = false;
+		ErrorMsgTextBox->Text = "";
 		for (int i = 0; i < 9; i++)
 			cells[i] = 0;
 		CurrentPlayerLabel->Text = "Player 1";
@@ -480,5 +511,9 @@ namespace TicTacToeGamev2 {
 	   return !zeroInField;
    }
 
+	private: System::Void ErrorMsgTextBox_Enter(System::Object^ sender, System::EventArgs^ e)
+	{
+		StartGameButton->Focus();
+	}
 };
 }

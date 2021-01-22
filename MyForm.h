@@ -39,6 +39,7 @@ namespace TicTacToeGamev2 {
 				delete components;
 			}
 		}
+	
 	private: System::Windows::Forms::PictureBox^ Field4;
 	protected:
 
@@ -101,6 +102,7 @@ namespace TicTacToeGamev2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->Text = "TicTacToeGame";
 			this->Field4 = (gcnew System::Windows::Forms::PictureBox());
 			this->Field3 = (gcnew System::Windows::Forms::PictureBox());
 			this->Field5 = (gcnew System::Windows::Forms::PictureBox());

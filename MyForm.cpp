@@ -2,7 +2,7 @@
 
 #include <Windows.h>
 
-using namespace TicTacToeGamev2; // Название проекта
+using namespace TicTacToeGamev2;
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
